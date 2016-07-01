@@ -10,7 +10,7 @@
       "key-count",
       "statusbar"
   ],
-  "repository": "https://github.com/atom/key-count",
+  "repository": "https://github.com/JChanceHud/key-count",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
