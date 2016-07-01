@@ -1,0 +1,25 @@
+{
+  "name": "key-count",
+  "main": "./lib/key-count",
+  "version": "0.0.0",
+  "description": "Shows number of key presses",
+  "keywords": [
+      "key",
+      "count",
+      "keycount",
+      "key-count",
+      "statusbar"
+  ],
+  "repository": "https://github.com/atom/key-count",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "consumedServices": {
+        "status-bar": {
+            "versions": {
+                "^1.0.0": "consumeStatusBar"
+            }
+        }
+    }
+}
