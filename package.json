@@ -1,8 +1,8 @@
 {
-  "name": "key-count",
+  "name": "statusbar-key-count",
   "main": "./lib/key-count",
   "version": "0.0.0",
-  "description": "Shows number of key presses",
+  "description": "Shows number of key presses in the status bar",
   "keywords": [
       "key",
       "count",
@@ -10,7 +10,7 @@
       "key-count",
       "statusbar"
   ],
-  "repository": "https://github.com/JChanceHud/key-count",
+  "repository": "https://github.com/JChanceHud/statusbar-key-count",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
