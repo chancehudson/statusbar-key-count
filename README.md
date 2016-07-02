@@ -2,7 +2,8 @@
 
 Count the number of key presses in your day.
 Adds a small customizable indicator to the bottom status bar.
-Use ctrl-alt-r to reset the counter.
+
+Use **ctrl-alt-r** to reset the counter.
 
 Customizable properties
 * background color
