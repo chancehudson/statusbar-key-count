@@ -1,14 +1,14 @@
 {
   "name": "statusbar-key-count",
   "main": "./lib/key-count",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shows number of key presses in the status bar",
   "keywords": [
-      "key",
-      "count",
-      "keycount",
-      "key-count",
-      "statusbar"
+    "key",
+    "count",
+    "keycount",
+    "key-count",
+    "statusbar"
   ],
   "repository": "https://github.com/JChanceHud/statusbar-key-count",
   "license": "MIT",
@@ -16,10 +16,10 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "consumedServices": {
-        "status-bar": {
-            "versions": {
-                "^1.0.0": "consumeStatusBar"
-            }
-        }
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
     }
+  }
 }
