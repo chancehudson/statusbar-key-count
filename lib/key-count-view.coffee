@@ -13,13 +13,23 @@ class KeyCountView extends HTMLElement
         @disposables.add atom.keymaps.onDidFailToMatchBinding ({keystrokes, keyboardEventTarget}) =>
             @update(keystrokes, null, keyboardEventTarget)
 
-    refresh: ->
+    refresh: (key) ->
+        #styling
+        @innerSpan.style.backgroundColor = @backgroundColor
+        @innerSpan.style.color = @textColor
+        #content
         @count = 0 unless @count?
-        @innerSpan.textContent = ++@count;
+        @count++;
+        @lastPressedKey = key
+        lastKey = @lastPressedKey || "💩"
 
-    update: (keys) ->
-        if keys.charAt(0) == '^'
-            @refresh()
+        s = @format.replace '%k', lastKey
+        s = s.replace '%c', @count
+        @innerSpan.textContent = s
+
+    update: (key) ->
+        if key.charAt(0) == '^'
+            @refresh(key.slice(1))
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->
