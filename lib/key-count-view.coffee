@@ -24,7 +24,7 @@ class KeyCountView extends HTMLElement
         #content
         @count = 0 unless @count?
         @count++;
-        lastKey = key || DEFAULT_COUNT
+        lastKey = key || @defaultKeyString
 
         s = @format.replace '%k', lastKey
         s = s.replace '%c', @count
