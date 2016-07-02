@@ -1,5 +1,7 @@
 {Disposable, CompositeDisposable} = require 'atom'
 
+DEFAULT_COUNT = "💩"
+
 class KeyCountView extends HTMLElement
     init: ->
         @classList.add('key-count', 'inline-block')
@@ -8,6 +10,8 @@ class KeyCountView extends HTMLElement
         @innerSpan.classList.add('key-count-inner')
         @appendChild(@innerSpan)
         @innerSpan.textContent = "Keycount"
+
+        @lastPressedKey = ''
 
         @disposables = new CompositeDisposable
         @disposables.add atom.keymaps.onDidFailToMatchBinding ({keystrokes, keyboardEventTarget}) =>
@@ -20,16 +24,16 @@ class KeyCountView extends HTMLElement
         #content
         @count = 0 unless @count?
         @count++;
-        @lastPressedKey = key
-        lastKey = @lastPressedKey || "💩"
+        lastKey = key || DEFAULT_COUNT
 
         s = @format.replace '%k', lastKey
         s = s.replace '%c', @count
         @innerSpan.textContent = s
 
     update: (key) ->
-        if key.charAt(0) == '^'
-            @refresh(key.slice(1))
+        if (key.replace '^', '') != (@lastPressedKey.replace '^', '')
+            @refresh(key.replace '^', '')
+            @lastPressedKey = key
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->
