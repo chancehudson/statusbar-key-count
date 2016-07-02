@@ -1,7 +1,7 @@
 {
   "name": "statusbar-key-count",
   "main": "./lib/key-count",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shows number of key presses in the status bar",
   "keywords": [
     "key",
