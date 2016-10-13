@@ -43,7 +43,7 @@ module.exports = KeyCount =
         @keyCountView.count = @state?.keyCountViewState?.count
         @keyCountView.refresh()
 
-        colorRegex = /^#[a-f0-9]{6}$/
+        colorRegex = /^#[a-fA-F0-9]{6}$/
 
         _this = this
         atom.config.onDidChange 'statusbar-key-count.format', ({newValue, oldValue}) ->
